@@ -1,0 +1,16 @@
+$usuarios = Get-LocalUser
+$cantidadUsuarios = $usuarios.Count
+
+Write-Host "Lista de cantidad de usuarios en el sistema: $cantidadUsuarios"
+
+[int] $limite = Read-Host "introducir un numero entero que actue como cantidad limite de referencia"
+
+if (($cantidadUsuarios -gt $limite) -And ($cantidadUsuarios -lt 10)) {
+    Write-Host "Si cumple la condicion: la cantidad de usuarios ($cantidadUsuarios) es mayor a $limite y es menor a 10"
+} else {
+    Write-Host "No cumple la condicion: la cantidad de usuarios ($cantidadUsuarios) NO es mayor a $limite y menor a 10"
+}
+
+Write-Host "Version de PowerShell del entorno actual:"
+$PSVersionTable.PSVersion
+Write-Host "Fin del programa"
